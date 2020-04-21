@@ -97,8 +97,6 @@ export function setServerConfig(serverConfig:{[key:string]:any }){
         console.log(`Overriding apiRoot with: ${frontendOverride.apiRoot}`);
         config.apiRoot = `${frontendOverride.apiRoot}`;
     }
-
-    config.fhirspark = {};
     if (frontendOverride.fhirspark) {
         console.log(`Overriding fhirspark with: ${frontendOverride.fhirspark}`);
         config.fhirspark = `${frontendOverride.fhirspark}`;
@@ -201,6 +199,7 @@ export function initializeConfiguration() {
 
     const configServiceUrl = config.configurationServiceUrl || `${APIROOT}config_service.jsp`;
 
+    config.fhirspark = {};
     // @ts-ignore: ENV_* are defined in webpack.config.js
     config.fhirspark.host = `${ENV_FHIRSPARK_HOST || config.fhirspark.host}`;
 
