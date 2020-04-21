@@ -5,6 +5,7 @@ export interface IAppConfig {
     frontendUrl?: string;
     serverConfig: IServerConfig;
     hide_login?: boolean;
+    fhirspark?: IFhirsparkConfig;
 }
 
 export type CategorizedConfigItems = {
@@ -117,4 +118,9 @@ export interface IServerConfig {
     dat_uuid_revoke_other_tokens: boolean;
     dat_method: string;
     skin_show_gsva:boolean;
+}
+
+export interface IFhirsparkConfig {
+    host: string | null;
+    port: string | null;
 }
