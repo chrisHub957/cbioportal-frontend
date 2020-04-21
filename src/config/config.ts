@@ -98,8 +98,8 @@ export function setServerConfig(serverConfig:{[key:string]:any }){
         config.apiRoot = `${frontendOverride.apiRoot}`;
     }
     if (frontendOverride.fhirspark) {
-        console.log(`Overriding fhirspark with: ${frontendOverride.fhirspark}`);
-        config.fhirspark = `${frontendOverride.fhirspark}`;
+        console.log(`Overriding fhirspark with: `, frontendOverride.fhirspark);
+        config.fhirspark = frontendOverride.fhirspark;
     }
 
     // allow any hardcoded serverConfig props to override those from service
