@@ -200,15 +200,11 @@ export function initializeConfiguration() {
     const configServiceUrl = config.configurationServiceUrl || `${APIROOT}config_service.jsp`;
 
     // @ts-ignore: ENV_* are defined in webpack.config.js
-    if(`${ENV_FHIRSPARK_HOST}` != ``) {
-        // @ts-ignore: ENV_* are defined in webpack.config.js
-        config.fhirspark.host = `${ENV_FHIRSPARK_HOST}`;
-    }
+    config.fhirspark.host = `${ENV_FHIRSPARK_HOST || config.fhirspark.host}`;
+
     // @ts-ignore: ENV_* are defined in webpack.config.js
-    if(`${ENV_FHIRSPARK_PORT}` != ``) {
-        // @ts-ignore: ENV_* are defined in webpack.config.js
-        config.fhirspark.port = `${ENV_FHIRSPARK_PORT}`;
-    }
+    config.fhirspark.port = `${ENV_FHIRSPARK_PORT || config.fhirspark.port}`;
+
 
     // should override both when in dev mode and when serving compiled source
     // code outside of legacy project
